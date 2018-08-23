@@ -1,0 +1,54 @@
+body {
+    font-family: "Bree Serif", sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container, .resultsOne, .resultsTwo {
+    width: 400px;
+    padding: 10px;
+    margin: 50px auto;
+    border: 5px solid #bbffff;
+    border-radius: 20px;
+    background-color: white;
+    
+    transition: background-color .5s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+
+.gif, .magic {
+    width: 400px;
+    height: auto;
+}
+
+.resultsOne {
+    display: none;
+    text-align: center; 
+}
+
+.resultsTwo {
+    display: none;
+    text-align: center; 
+}
+
+.container:hover {
+    background-color: #eeffff;
+    border-color: #eeffff;
+}
+
+.amountEaten,
+.yourName,
+.foodName {
+    padding: 10px;
+}
+
+.submit {
+    background-color: #aaffff;
+    padding: 20px;
+    font-size: 18px;
+    color: #1edede;
+    border: none;
+    margin-top: 20px;
+}
