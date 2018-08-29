@@ -10,13 +10,12 @@ $(".go").click(function() {
     var name = $(".inputOne").val();
     var books = $(".inputTwo").val(); 
     var character = $(".inputThree").val();
-    var text = "foo bar loo zoo moo";
-    name = name.toLowerCase()
-        .split(' ')  
-        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-        .join(' ');
     var booksUpper = books.charAt(0).toUpperCase() + books.substr(1);
     character = character.toLowerCase()
+        .split(' ')
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
+    name = name.toLowerCase()
         .split(' ')
         .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
         .join(' ');
@@ -37,3 +36,10 @@ $(".go").click(function() {
         $(".resultsThree").show(".zerogif");
         }
 }); 
+
+$(".back").click(function() {
+        $(".container").show();
+        $(".resultsTwo").hide();
+        $(".resultsThree").hide();
+        $(".resultsError").hide();
+});
