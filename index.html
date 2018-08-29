@@ -11,11 +11,11 @@ h1 {
     text-align: center;
 }
 
-.container, .resultsOne, .resultsTwo {
+.container, .resultsOne, .resultsTwo, .resultsThree, .resultsError {
     width: 400px;
     padding: 10px;
     margin: 50px auto;
-    border: 5px solid #bbffff;
+    border: 5px solid #bbffff; 
     border-radius: 20px;
     background-color: white;
     
@@ -23,17 +23,12 @@ h1 {
     transition: border .2s ease-in-out;
 }
 
-.gif, .magic {
+img {
     width: 400px;
     height: auto;
 }
 
-.resultsOne {
-    display: none;
-    text-align: center; 
-}
-
-.resultsTwo {
+.resultsOne, .resultsTwo, .resultsThree, .resultsError {
     display: none;
     text-align: center; 
 }
@@ -64,7 +59,7 @@ h1 {
             <p>Your Name</p>
             <input class="inputOne">
             
-            <p>How many books do you read every year?</p>
+            <p>How many books do you read each year?</p>
             <input class="inputTwo">
             
             
@@ -83,7 +78,13 @@ h1 {
         </div>
         
         <div class="resultsTwo">
-            <img class="gif" src="https://media.giphy.com/media/IV9qd3vGQrjCo/giphy.gif">
+            <img class="booksgif" src="https://media.giphy.com/media/IV9qd3vGQrjCo/giphy.gif">
+        </div>
+                <div class="resultsThree">
+            <img class="zerogif" src="https://media.giphy.com/media/H6KB7Tqy3OlOM/giphy.gif">
+        </div>
+        <div class="resultsError">
+            <img class="errorgif" src="https://media.giphy.com/media/eFAFV2ytLzBba/giphy.gif">
         </div>
     
 
@@ -99,25 +100,32 @@ $(".submit").click(function() {
         
 $(".go").click(function() {
     var name = $(".inputOne").val();
-    var nameUpper = name.toUpperCase();
     var books = $(".inputTwo").val(); 
-    var booksUpper = books.toUpperCase();
     var character = $(".inputThree").val();
-    var characterUpper = character.toUpperCase();
+    var text = "foo bar loo zoo moo";
+    name = name.toLowerCase()
+        .split(' ')  
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
+    var booksUpper = books.charAt(0).toUpperCase() + books.substr(1);
+    character = character.toLowerCase()
+        .split(' ')
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
     if (books > 6)
         {
         $(".resultsOne").slideUp(".magic");
-        $(".resultsTwo").append("Wow, " + nameUpper + "! By the year 2050, you will have read " + (books*32) + " more books! " + characterUpper + " would be soooooo impressed!");
-        $(".resultsTwo").show(".gif");
+        $(".resultsTwo").append("Wow, " + name + "! By the year 2050, you will have read " + (books*32) + " more books! " + character + " would be soooooo impressed!");
+        $(".resultsTwo").show(".booksgif");
         }
     else if (isNaN(books)) {
         $(".resultsOne").slideUp(".magic");
-        $(".resultsTwo").append("Very funny, " + nameUpper + "! " + booksUpper + " is not a number that I can calculate. Consult " + characterUpper + " and try again."); 
-        $(".resultsTwo").show(".gif");
+        $(".resultsError").append("Very funny, " + name + "! " + booksUpper + " is not a number that I can calculate. Consult " + character + " and try again by typing your number in digits.");  
+        $(".resultsError").show(".errorgif"); 
     }  
     else {
         $(".resultsOne").slideUp(".magic");
-        $(".resultsTwo").append("Booooo, " + nameUpper + "! By the year 2050, you will have ONLY read " + (books*32) + " more books! You are a disappointment to " + characterUpper + "!");
-        $(".resultsTwo").show(".gif");
+        $(".resultsThree").append("Booooo, " + name + "! By the year 2050, you will have ONLY read " + (books*32) + " more books! You are a disappointment to " + character + "!");
+        $(".resultsThree").show(".zerogif");
         }
 }); </script></body></html>
