@@ -6,11 +6,11 @@ h1 {
     text-align: center;
 }
 
-.container, .resultsOne, .resultsTwo {
+.container, .resultsOne, .resultsTwo, .resultsThree, .resultsError {
     width: 400px;
     padding: 10px;
     margin: 50px auto;
-    border: 5px solid #bbffff;
+    border: 5px solid #bbffff; 
     border-radius: 20px;
     background-color: white;
     
@@ -18,17 +18,12 @@ h1 {
     transition: border .2s ease-in-out;
 }
 
-.gif, .magic {
+img {
     width: 400px;
     height: auto;
 }
 
-.resultsOne {
-    display: none;
-    text-align: center; 
-}
-
-.resultsTwo {
+.resultsOne, .resultsTwo, .resultsThree, .resultsError {
     display: none;
     text-align: center; 
 }
