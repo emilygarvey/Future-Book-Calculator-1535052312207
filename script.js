@@ -1,6 +1,5 @@
 $(".submit").click(function() {
     $(".container").hide();
-
 });
 
 $(".submit").click(function() {
@@ -8,10 +7,23 @@ $(".submit").click(function() {
 }); 
         
 $(".go").click(function() {
-    var name = $(".inputOne").val();
+    var name = $(".inputOne").val(); 
     var books = $(".inputTwo").val(); 
     var character = $(".inputThree").val();
+    if (books > 6)
+        {
         $(".resultsOne").slideUp(".magic");
         $(".resultsTwo").append("Wow, " + name + "! By the year 2050, you will have read " + (books*32) + " more books! " + character + " would be soooooo impressed!");
         $(".resultsTwo").show(".gif");
+        }
+    else if (isNaN(books)) {
+        $(".resultsOne").slideUp(".magic");
+        $(".resultsTwo").append("Very funny, " + name + "! " + books + " is not a number that I can calculate. Consult " + character + " and try again."); 
+        $(".resultsTwo").show(".gif");
+    }
+    else {
+        $(".resultsOne").slideUp(".magic");
+        $(".resultsTwo").append("Booooo, " + name + "! By the year 2050, you will have ONLY read " + (books*32) + " more books! You are a disappointment to " + character + "!");
+        $(".resultsTwo").show(".gif");
+        }
 }); 
