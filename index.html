@@ -85,13 +85,20 @@ img {
         </div>
         
         <div class="resultsTwo">
+            <button class="back">Try again</button>
+            <p></p>
             <img class="booksgif" src="https://media.giphy.com/media/IV9qd3vGQrjCo/giphy.gif">
         </div>
-                <div class="resultsThree">
+        <div class="resultsThree">
+            <button class="back">Try again</button>
+            <p></p>
             <img class="zerogif" src="https://media.giphy.com/media/H6KB7Tqy3OlOM/giphy.gif">
         </div>
         <div class="resultsError">
+            <button class="back">Try again</button>
+            <p></p>
             <img class="errorgif" src="https://media.giphy.com/media/eFAFV2ytLzBba/giphy.gif">
+            
         </div>
     
 
@@ -109,13 +116,12 @@ $(".go").click(function() {
     var name = $(".inputOne").val();
     var books = $(".inputTwo").val(); 
     var character = $(".inputThree").val();
-    var text = "foo bar loo zoo moo";
-    name = name.toLowerCase()
-        .split(' ')  
-        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-        .join(' ');
     var booksUpper = books.charAt(0).toUpperCase() + books.substr(1);
     character = character.toLowerCase()
+        .split(' ')
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
+    name = name.toLowerCase()
         .split(' ')
         .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
         .join(' ');
@@ -135,4 +141,12 @@ $(".go").click(function() {
         $(".resultsThree").append("Booooo, " + name + "! By the year 2050, you will have ONLY read " + (books*32) + " more books! You are a disappointment to " + character + "!");
         $(".resultsThree").show(".zerogif");
         }
-}); </script></body></html>
+}); 
+
+$(".back").click(function() {
+        $(".container").show();
+        $(".resultsTwo").hide();
+        $(".resultsThree").hide();
+        $(".resultsError").hide();
+});
+</script></body></html>
