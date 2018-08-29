@@ -8,25 +8,32 @@ $(".submit").click(function() {
         
 $(".go").click(function() {
     var name = $(".inputOne").val();
-    var nameUpper = name.toUpperCase();
     var books = $(".inputTwo").val(); 
-    var booksUpper = books.toUpperCase();
     var character = $(".inputThree").val();
-    var characterUpper = character.toUpperCase();
+    var text = "foo bar loo zoo moo";
+    name = name.toLowerCase()
+        .split(' ')  
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
+    var booksUpper = books.charAt(0).toUpperCase() + books.substr(1);
+    character = character.toLowerCase()
+        .split(' ')
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
     if (books > 6)
         {
         $(".resultsOne").slideUp(".magic");
-        $(".resultsTwo").append("Wow, " + nameUpper + "! By the year 2050, you will have read " + (books*32) + " more books! " + characterUpper + " would be soooooo impressed!");
-        $(".resultsTwo").show(".gif");
+        $(".resultsTwo").append("Wow, " + name + "! By the year 2050, you will have read " + (books*32) + " more books! " + character + " would be soooooo impressed!");
+        $(".resultsTwo").show(".booksgif");
         }
     else if (isNaN(books)) {
         $(".resultsOne").slideUp(".magic");
-        $(".resultsTwo").append("Very funny, " + nameUpper + "! " + booksUpper + " is not a number that I can calculate. Consult " + characterUpper + " and try again."); 
-        $(".resultsTwo").show(".gif");
+        $(".resultsError").append("Very funny, " + name + "! " + booksUpper + " is not a number that I can calculate. Consult " + character + " and try again by typing your number in digits.");  
+        $(".resultsError").show(".errorgif"); 
     }  
     else {
         $(".resultsOne").slideUp(".magic");
-        $(".resultsTwo").append("Booooo, " + nameUpper + "! By the year 2050, you will have ONLY read " + (books*32) + " more books! You are a disappointment to " + characterUpper + "!");
-        $(".resultsTwo").show(".gif");
+        $(".resultsThree").append("Booooo, " + name + "! By the year 2050, you will have ONLY read " + (books*32) + " more books! You are a disappointment to " + character + "!");
+        $(".resultsThree").show(".zerogif");
         }
 }); 
