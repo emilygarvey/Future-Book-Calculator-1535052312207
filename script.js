@@ -27,12 +27,12 @@ $(".go").click(function() {
         }
     else if (isNaN(books)) {
         $(".resultsOne").slideUp(".magic");
-        $(".resultsError").append("Very funny, " + name + "! " + booksUpper + " is not a number that I can calculate. Consult " + character + " and try again by typing your number in digits.");  
+        $(".resultsError").append("Very funny, " + name + "! '" + booksUpper + "' is not a number that I can calculate. Consult " + character + " and try again by typing your number in digits.");  
         $(".resultsError").show(".errorgif"); 
     }  
     else {
         $(".resultsOne").slideUp(".magic");
-        $(".resultsBoo").append("Booooo, " + name + "! By the year 2050, you will have ONLY read " + (books*32) + " more books! You are a disappointment to " + character + "!");
+        $(".resultsBoo").append("Booooo, " + name + "! By the year 2050, you will have ONLY read " + (books*32) + " more books! You are a disappointment to " + character + ".");
         $(".resultsBoo").show(".zerogif");
         }
 }); 
