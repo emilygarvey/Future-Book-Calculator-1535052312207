@@ -22,8 +22,8 @@ $(".go").click(function() {
     if (books > 6)
         {
         $(".resultsOne").slideUp(".magic");
-        $(".resultsTwo").append("Wow, " + name + "! By the year 2050, you will have read " + (books*32) + " more books! " + character + " would be soooooo impressed!");
-        $(".resultsTwo").show(".booksgif");
+        $(".resultsWow").append("Wow, " + name + "! By the year 2050, you will have read " + (books*32) + " more books! " + character + " would be soooooo impressed!");
+        $(".resultsWow").show(".booksgif");
         }
     else if (isNaN(books)) {
         $(".resultsOne").slideUp(".magic");
@@ -32,14 +32,11 @@ $(".go").click(function() {
     }  
     else {
         $(".resultsOne").slideUp(".magic");
-        $(".resultsThree").append("Booooo, " + name + "! By the year 2050, you will have ONLY read " + (books*32) + " more books! You are a disappointment to " + character + "!");
-        $(".resultsThree").show(".zerogif");
+        $(".resultsBoo").append("Booooo, " + name + "! By the year 2050, you will have ONLY read " + (books*32) + " more books! You are a disappointment to " + character + "!");
+        $(".resultsBoo").show(".zerogif");
         }
 }); 
 
 $(".back").click(function() {
-        $(".container").show();
-        $(".resultsTwo").hide();
-        $(".resultsThree").hide();
-        $(".resultsError").hide();
+    location.reload();
 });
