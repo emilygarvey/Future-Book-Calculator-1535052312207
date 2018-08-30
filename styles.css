@@ -9,7 +9,7 @@ h1 {
     text-align: center;
 }
 
-.container, .resultsOne, .resultsTwo, .resultsThree, .resultsError {
+.container, .resultsOne, .resultsWow, .resultsBoo, .resultsError {
     width: 400px;
     padding: 10px;
     margin: 125px 400px;
@@ -30,7 +30,7 @@ img {
     height: 300px;
 }
 
-.resultsOne, .resultsTwo, .resultsThree, .resultsError {
+.resultsOne, .resultsWow, .resultsBoo, .resultsError {
     display: none;
     text-align: center; 
 }
