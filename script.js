@@ -1,9 +1,19 @@
-$(".submit").click(function() {
-    $(".container").hide();
+$(".inputOne").blur(function()          //whenever you click off an input element
+{                   
+    if( !$(this).val() ) {                      //if it is blank. 
+         alert('empty');    
+    }
 });
 
 $(".submit").click(function() {
+    if ($.trim($(".inputOne").val()) === "" || $.trim($(".inputTwo").val()) === "" || $.trim($(".inputThree").val()) === "") {
+        alert('you did not fill out all of the fields');
+        return false;
+    }
+    else {
+        $(".container").hide();
         $(".resultsOne").show(".magic");
+}
 }); 
         
 $(".go").click(function() {
